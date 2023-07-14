@@ -6,7 +6,6 @@ const authMiddleware = require('../middlewares/auth-middleware');
 const router = express.Router();
 
 router.post('/:postId/comments', authMiddleware, async (req, res) => {
-    console.log('\u001b[1;34m POST /:postId/comments\u001b[0m');
 
     const { userId, nickname } = res.locals.user;
     const { postId } = req.params;
@@ -45,7 +44,6 @@ router.post('/:postId/comments', authMiddleware, async (req, res) => {
 });
 
 router.get('/:postId/comments', async (req, res) => {
-    console.log('\u001b[1;32m GET /:postId/comments\u001b[0m');
 
     const { postId } = req.params;
 
@@ -67,7 +65,6 @@ router.get('/:postId/comments', async (req, res) => {
 });
 
 router.put('/:postId/comments/:commentId', authMiddleware, async (req, res) => {
-    console.log('\u001b[1;33m PUT /:postId/comments/:commentId\u001b[0m');
 
     const { userId } = res.locals.user;
     const { postId } = req.params;
@@ -124,7 +121,6 @@ router.put('/:postId/comments/:commentId', authMiddleware, async (req, res) => {
 });
 
 router.delete('/:postId/comments/:commentId', authMiddleware, async (req, res) => {
-    console.log('\u001b[1;31m DELETE /:postId/comments/:commentId\u001b[0m');
 
     const { userId } = res.locals.user;
     const { postId } = req.params;
